@@ -17,15 +17,18 @@ Do the following:
 
    HINT: no function required
 */
-let votingAge;
-let name= "John";
-if (votingAge >=18){
-  console.log(`${name} is eligible to vote`);
-}
-else{
-  console.log(`${name} is not eleigible to vote`);
-}
+const votingAge= function(){
+ let age;
 
+if(age >= 18){
+  return true;
+} 
+
+else{
+  return false;
+}
+}
+console.log(votingAge(18));
 
 /*
 Task 1b - Values
@@ -37,19 +40,16 @@ Do the following:
 
    HINT: no function required
 */
-let value1;
-let value2=1;
+let value1=2;
 
-if (value2===1){
-  value1=10;
-  console.log(`${value1}`);
-}
-else{
-  console.log("That's it");
+let value2=5;
+
+if(value1===2 || value2===5){
+  value1=12;
+  value2=29;
 }
 
-
-
+console.log(value1);
 
 
 /*
@@ -62,8 +62,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-let x="1999";
-console.log(Number(x));
+let stringVariable="1999";
+
+console.log(Number(stringVariable));
 
 
 
@@ -76,12 +77,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(x,y){
-   let result=x*y;
-   return result;
+function multiply(a,b){
+   return a*b;
   }
 
-console.log(multiply(2,2));
+  console.log(multiply(5,5));
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -93,11 +94,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(humanYears){
-    let result=humanYears*7;
-    return result;
+function dogYears(years){
+   return years * 7;
 }
-console.log(dogYears(5));
+console.log(dogYears(1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -127,36 +127,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age,weight){
-   if(weight <= 5 && age >=1){
-     result=weight*0.05;
-    console.log(`Your dog should eat ${result} pounds of food`);
-   }
-   else if(weight >5 && weight <=10 && age>=1){
-     result=weight*0.04;
-     console.log(`Your dog should eat ${result} pounds of food`);
-   }
-   else if(weight >10 && weight <=15 && age>=1){
-    result=weight*0.03;
-    console.log(`Your dog should eat ${result} pounds of food`);
+function hungryDog(weight,age){
+    if(age >= 1 && weight <= 5){
+      return weight * .05;
+    }
+
+    if(age >= 1 && weight >= 6 && weight <= 10 ){
+      return weight * .04;
+    }
+
+    if(age >= 1 && weight >= 11 && weight <= 15 ){
+      return weight *.03;
+    }
+
+    if(age >= 1 && weight >= 15){
+      return weight *.02;
+    }
+
+    if(age < 1 && age >= .16 && age <=.33){
+      return weight *.1;
+    }
+
+    if(age < 1 && age > .33 && age <= .58) {
+      return weight * .05;
+    }
+    if(age <= 1 && age > .58 ) {
+      return weight * .04;
+    }
   }
-  else if(weight >15 && age>=1){
-    result=weight*0.02;
-    console.log(`Your dog should eat ${result} pounds of food`);
-  }
-  else if(age < 1 && age <=.33 && age >=0.16){
-    result=weight *0.1;
-    console.log(`Your puppy should eat ${result} pounds of food`);
-  }
-  else if(age < 1 && age <=.33 && age <=0.58){
-    result=weight *0.05;
-    console.log(`Your puppy should eat ${result} pounds of food`);
-  }
-  else if(age <= 1 && age >=.58 ){
-    result=weight *0.4;
-    console.log(`Your puppy should eat ${result} pounds of food`);
-  }
-  }
+
+  console.log(15,1);
 
 
 
@@ -180,75 +180,46 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+const choice= Math.random(0,1);
 
 function game(user, computer){
-    const computer=Math.random(0,1);
-    let computerChoice= function cpu(){
-      if (computerChoice <= .34){
-        return computerChoice="Rock";
-      }
-      else if(computerChoice <= .67 && computerChoice >=35){
-        return computerChoice="Paper";
-      }
-      else if(computerChoice >=.68){
-        return computerChoice="Scissors";
-      }
-    }
-    let computerChoice=choice2
-    let user=choice1;
-    const compare=function (choice1,choice2){
-      if (choice1==="Rock"||"Paper" ||Scissors){
-        if(choice1===choice2){
-          console.log(`The result is a tie`);
-        }
-        else if (choice1 === "Rock")
-        {
-            if (choice2 === "Scissors")
-            {
-                return alert("Rock crushes Scissors!");
-            }
-            else if (choice2 === "Paper")
-            {
-                return alert("Paper covers Rock!");
-            }
-        }
-        if (choice1 === "Scissors")
-        {
-            if (choice2 === "Rock")
-            {
-                return alert("Rock crushes Scissors!");
-            }
-            else if (choice2 === "Paper")
-            {
-                return alert("Scissors cuts Paper!");
-            }
-        }
-        else if (choice1 === "Paper")
-        {
-            if (choice2 === "Rock")
-            {
-                return alert("Paper covers Rock!");
-            }
-            else if (choice2 === "Scissors")
-            {
-                return alert("Scissors cuts Paper!");
-            }
-        }
-    }
-    else 
-    {
-        return alert("Please type Rock, Paper, or Scissors next time");
-    }
+let computerScore= choice;
 
-      }
-      computerChoice();
-      compare(choice1,choice2);
-    }
+if(computerScore <=.34){
+  computerScore= "rock";
+}
+if(computerScore >=.34 && computerScore <= .67){
+  computerScore= "scissors";
+}
+if(computerScore >= .68 && computerScore <=1){
+  computerScore= "paper";
+}
+if(user===computer){
+  return "it's a tie";
+}
 
-  
+if(user==="rock" && computer==="scissors"){
+  return "you win!";
+}
+if(user==="paper" && computer==="rock"){
+  return"you win!";
+}
+if(user==="scissors" && computer==="paper") {
+  return "you win!";
+}
+if(user==="rock" && computer==="paper"){
+  return "you lose!";
+}
+if(user==="paper" && computer==="scissors"){
+  return "you lose!";
+}
+if(user==="scissors" && computer==="rock"){
+  return "you lose!";
+}
+}
 
-  
-  
+
+   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -262,11 +233,9 @@ Using the miles function below do the following:
 */
 
 function miles(km){
-    result= km*.6;
-   return result;
-  }
-console.log(`The equivalent of ${km} in miles is equal to ${miles()} miles`);
 
+    return km * 0.621371;
+  }
 
 //Task 5b - Feet to CM
 /*
@@ -277,15 +246,14 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-    result=cm/30.48;
-    return result;
+    return cm / 30.48;
   }
-  console.log(`The equivalent of ${cm} in feet is equal to ${feet()} feet`);
  
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
+console.log(miles(22));
+console.log(feet(234))
 // Let's Sing 99 Bottles of Soda on the Wall!
 /*
 Using the annoyingSong function below do the following:
@@ -294,27 +262,26 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(){
-        const cans;
-        for (i=99; i >=1 ; i=i-1){
-          if(i==1){
-            cans="can";
-          }
-          else{
-            cans="can";
-          }
-          console.log(`${i}+ ${cans} of Mountain Dew On the Wall`);
-          if(i<99){
-            console.log(``);
-            console.log(`${i}+ ${cans} of Mountain Dew On the Wall`);
-          }
-          console.log(`${i}+ ${cans} of Mountain Dew `);
-          console.log(`Sip it Down!!`);
-          console.log(`Sharing is Caring`);
-          if(i == 1){
-            console.log(`No Mountain Dew Cans on the Wall`);
-          }
-        }
+function annoyingSong(cans){
+  
+
+  for(cans; cans>=1;cans=cans-1){
+    if(cans===1){
+      cans="can";
+    }else{
+      cans="cans";
+    }
+    console.log(cans+" "+cans+"of soda on the wall.");
+    if(cans <99) {
+      return cans+" "+cans+"of soda on the wall.";
+    }
+    return `5 bottles of soda on the wall, 5 bottles of soda, take one down pass it around 4 bottles of soda on the wall`;
+    return "Take onw down.";
+    return "Pass it around.";
+    if(cans===1){
+      return "No bottles of soda on the wall";
+    }
+  }
   }
 
 
@@ -333,27 +300,29 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(grade){
-  if(grade >= 90 && grade <=100){
-    console.log(`You Got An A`);
+function grade(score){
+  if ( score >=90 && score <= 100) {
+    return `you got an A`;
   }
-  else if(grade >=80 && grade < 90){
-    console.log(`You Got A B`);
+
+  if ( score >=80 && score <= 89) {
+    return `you got a B`;
   }
-  else if(grade >=70 && grade <80){
-    console.log(`You Got A C`);
+
+  if( score >= 70 && score <= 79) {
+    return `you got a C`;
   }
-  else if(grade >=60 && grade <70){
-    console.log(`You Got A D`);
+
+  if(score >= 60 && score <= 69) {
+    return `you got a D`;
   }
-  else if(grade <0 || grade >100){
-    console.log(`Please try A valid score ranging from 0 to 100`);
-  }
+
   else{
-    console.log(`You Got An F`);
+    return `you got an F`;
   }
   }
   
+
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -368,19 +337,21 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-const vowels =["a","e","i","o","u"];
-function vowelCounter(string) {
-    let vowelCount = 0;
-   
-     for (let letter of str.toLowerCase()) {
-      if (vowels.includes(letter)) {
-          count++;
-      }
+const vowels = ['a','e','i','o','u'];
+
+function vowelCounter(vowelsCount) {
+  let counter = 0;
+
+  for( let letter of vowelsCount.toLowerCase()){
+    if ( vowels.includes(letter));{
+      counter++;
+    }
   }
-  return vowelCount;
+  return counter;
 }
 
-console.log(vowelCounter());
+
+
 
 
 
